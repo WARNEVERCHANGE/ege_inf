@@ -49,7 +49,7 @@ f = open('text.txt')
 n = int(f.readline())
 max_s = 0
 ost = [10001] * 5
-
+ost[0] = 0
 
 for i in range(n):
     a = list(map(int, f.readline().split()))
@@ -60,10 +60,37 @@ for i in range(n):
     diff = a[1] - a[0]
     temp = ost.copy()
     for j in range(5):
-        if temp[j] != 10001 and temp[(j + diff % 5) % 5] > temp[j] + diff:
-            temp[(j + diff % 5) % 5] = temp[j] + diff
+        if j + diff % 5 < 5:
+            next_j = j + diff % 5
+        else:
+            next_j = j + diff % 5 - 5
+
+
+        if ost[j] != 10001 and temp[next_j] > ost[j] + diff:
+            temp[next_j] = temp[j] + diff
+    
+    if temp[diff % 5] > diff:
+        temp[diff % 5] = diff
+
+    ost = temp.copy()
+
 # vichislenie resultata
 if max_s % 5 != 0:
     max_s -= ost[max_s % 5]
 
 print(max_s)
+
+
+'''
+1.Прочитать условие
+2.Разобраться почему пример выводит такие значения
+3.Придумать алгоритм для примера
+4.Придумать, какие случаи необходимо обработать
+5.Придумать алгоритм, который решает задачу с учетом п.4
+6.Понять сколько нужно переменных и каких
+7.Начать писать код(ввод данных и обработка конечная)
+8.Подумать как обрабатываются данные на итерации
+9.Что нужно на следующей
+10.Написать код
+
+'''
