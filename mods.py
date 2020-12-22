@@ -44,41 +44,41 @@
 
 # print(max_s) 
 
-f = open('text.txt')
+# f = open('text.txt')
 
-n = int(f.readline())
-max_s = 0
-ost = [10001] * 5
-ost[0] = 0
+# n = int(f.readline())
+# max_s = 0
+# ost = [10001] * 5
+# ost[0] = 0
 
-for i in range(n):
-    a = list(map(int, f.readline().split()))
-    a.sort()
-    # OBRABOTKA NOVIH ZNACHENIY
-    max_s += a[1]
-    # PODGOTOVKA SLEDUISHIH ITERACIY
-    diff = a[1] - a[0]
-    temp = ost.copy()
-    for j in range(5):
-        if j + diff % 5 < 5:
-            next_j = j + diff % 5
-        else:
-            next_j = j + diff % 5 - 5
+# for i in range(n):
+#     a = list(map(int, f.readline().split()))
+#     a.sort()
+#     # OBRABOTKA NOVIH ZNACHENIY
+#     max_s += a[1]
+#     # PODGOTOVKA SLEDUISHIH ITERACIY
+#     diff = a[1] - a[0]
+#     temp = ost.copy()
+#     for j in range(5):
+#         if j + diff % 5 < 5:
+#             next_j = j + diff % 5
+#         else:
+#             next_j = j + diff % 5 - 5
 
 
-        if ost[j] != 10001 and temp[next_j] > ost[j] + diff:
-            temp[next_j] = temp[j] + diff
+#         if ost[j] != 10001 and temp[next_j] > ost[j] + diff:
+#             temp[next_j] = temp[j] + diff
     
-    if temp[diff % 5] > diff:
-        temp[diff % 5] = diff
+#     if temp[diff % 5] > diff:
+#         temp[diff % 5] = diff
 
-    ost = temp.copy()
+#     ost = temp.copy()
 
-# vichislenie resultata
-if max_s % 5 != 0:
-    max_s -= ost[max_s % 5]
+# # vichislenie resultata
+# if max_s % 5 != 0:
+#     max_s -= ost[max_s % 5]
 
-print(max_s)
+# print(max_s)
 
 
 '''
@@ -94,3 +94,89 @@ print(max_s)
 10.Написать код
 
 '''
+
+
+# Task 1
+# f = open('./mods/27-26a.txt')
+# n = int(f.readline())
+
+# min_s = 0
+# ost = [10001] * 16
+# ost[0] = 0
+# for i in range(n):
+#     a, b = map(int, f.readline().split())
+#     if a > b:
+#         a, b = b, a
+#     min_s += a
+#     diff = b - a
+#     temp = ost.copy()
+#     for j in range(16):
+#         if ost[j] != 10001 and temp[(j + diff % 16) % 16] > ost[j] + diff:
+#             temp[(j + diff % 16) % 16] = ost[j] + diff
+#     if temp[diff % 16] > diff:
+#         temp[diff % 16] = diff
+
+#     ost = temp.copy()
+# if min_s % 16 != 15:
+#     min_s += ost[15 - (min_s % 16)]
+
+
+# print(min_s)
+
+
+# Task 2
+# f = open('./mods/27-32b.txt')
+
+# n = int(f.readline())
+
+# ost = [10001] * 12
+# ost[0] = 0
+# min_s = 0
+
+# for i in range(n):
+#     a = list(map(int, f.readline().split()))
+#     a.sort()
+#     min_s += a[0]
+#     diff = a[2] - a[0]
+#     temp = ost.copy()
+#     for j in range(12):
+#         if ost[j] != 10001 and temp[(j + diff % 11) % 11] > ost[j] + diff:
+#             temp[(j + diff % 11) % 11] = ost[j] + diff
+#     if temp[diff % 5] > diff:
+#         temp[diff % 5] = diff
+#     ost = temp.copy()
+#     diff = a[1] - a[0]
+#     for j in range(12):
+#         if ost[j] != 10001 and temp[(j + diff % 11) % 11] > ost[j] + diff:
+#             temp[(j + diff % 11) % 11] = ost[j] + diff
+#     if temp[diff % 5] > diff:
+#         temp[diff % 5] = diff
+#     ost = temp.copy()
+
+# if min_s % 11 != 0:
+#     min_s += ost[11 - (min_s % 11)]
+
+# print(min_s)
+
+
+# Task 3 
+# f = open('./mods/27-23b.txt')
+
+# n = int(f.readline())
+
+# max_s = 0
+# diff = 10001
+
+# for i in range(n):
+#     a, b = map(int, f.readline().split())
+#     if a > b:
+#         a, b = b, a
+#     max_s += b
+#     if (b - a) % 5 != 0 and b - a < diff:
+#         diff = b - a
+
+# print(max_s)
+# print(diff)
+# if max_s % 5 == 0 and max_s % 2 != 0:
+#     max_s -= diff
+# print(max_s)
