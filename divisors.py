@@ -6,20 +6,34 @@ def izi(n):
     return count == 0
 
 
-st = 11275
-fn = 16328
-count = 5
-for i in range(st, fn + 1):
-    d = [0] * (count + 1)
-    d[0] = 1
-    d[count] = i
-    c = 1
-    for j in range(2, int(i ** 0.5) + 1):
-        if i % j == 0:
-            if c < (count + 1) // 2:
-                d[c] = j
-                d[count - c] = i // j
-            c += 1 
+# st = 11275
+# fn = 16328
+# count = 5
+# for i in range(st, fn + 1):
+#     if int(int(i ** 0.5) ** 0.5) ** 4 == i and izi(int(int(i ** 0.5) ** 0.5)):
+#         d = [0] * count
+#         d[0] = 1
+#         d[1] = int(int(i ** 0.5) ** 0.5)
+#         d[2] = int(i ** 0.5)
+#         d[3] = d[1] * d[2]
+#         d[4] = i
+#         print(*d)
 
-    if c == (count + 1) // 2 and d[2] == d[3]:
-        print(*d)
+st = 248015
+fn = 251575
+num = 0
+for i in range(st, fn + 1):
+    count = 1
+    if i % 2 == 1:
+        count += 1
+    for j in range(2, int(i ** 0.5)):
+        if i % j == 0:
+            if j % 2 == 1:
+                count += 1
+            if (i // j) % 2 == 1:
+                count += 1
+    if int(i ** 0.5) ** 2 == i and int(i ** 0.5) % 2 == 1:
+        count += 1
+    if count % 2 == 1:
+        num += 1
+        print(num, i, count, int(i ** 0.5))
