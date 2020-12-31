@@ -19,21 +19,33 @@ def izi(n):
 #         d[4] = i
 #         print(*d)
 
-st = 248015
-fn = 251575
+# st = 248015
+# fn = 251575
+# num = 0
+# for i in range(st, fn + 1):
+#     count = 1
+#     if i % 2 == 1:
+#         count += 1
+#     for j in range(2, int(i ** 0.5) + 1):
+#         if i % j == 0:
+#             if j % 2 == 1:
+#                 count += 1
+#             if (i // j) % 2 == 1:
+#                 count += 1
+#     if int(i ** 0.5) ** 2 == i:
+#         count -= 1
+#     if count % 2 == 1:
+#         num += 1
+#         print(num, i, count, int(i ** 0.5))
+
 num = 0
-for i in range(st, fn + 1):
-    count = 1
-    if i % 2 == 1:
-        count += 1
-    for j in range(2, int(i ** 0.5)):
+st = 2943444
+fn =2943529
+for i in range(st, fn+1):
+    count = 0
+    for j in range(2, int(i ** 0.5) + 1):
         if i % j == 0:
-            if j % 2 == 1:
-                count += 1
-            if (i // j) % 2 == 1:
-                count += 1
-    if int(i ** 0.5) ** 2 == i and int(i ** 0.5) % 2 == 1:
-        count += 1
-    if count % 2 == 1:
+            count += 1
+    if count == 0:
         num += 1
-        print(num, i, count, int(i ** 0.5))
+        print(num, i)
