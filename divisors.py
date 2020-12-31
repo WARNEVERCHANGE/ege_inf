@@ -66,18 +66,33 @@ def izi(n):
 
 # print(counter, mx - mn)
 
-st = 4986
-fn = 32599
-s = 0
-for i in range(st, fn + 1):
-    count = 0
-    if int(i ** 0.5) ** 2 != i:
-        for j in range(2, int(i ** 0.5) + 1):
-            if i % j == 0:
-                count += 1
-    if count == 1:
-        s += i
+# st = 4986
+# fn = 32599
+# s = 0
+# for i in range(st, fn + 1):
+#     count = 0
+#     if int(i ** 0.5) ** 2 != i:
+#         for j in range(2, int(i ** 0.5) + 1):
+#             if i % j == 0:
+#                 count += 1
+#     if count == 1:
+#         s += i
 
-print(s)
+# print(s)
 
 
+# Доделать(поиск чисел которые являются произведением двух простых, вывести их количество и число близкое к среднему значению)
+# st = 412567
+# fn = 473265
+# rez = []
+# for i in range(st, fn + 1):
+#     count = 0
+#     for j in range(2, int(i ** 0.5) + 1):
+#         if i % j == 0 and izi(j) and izi(i // j):
+#             count += 1
+#     if count == 1:
+#         rez.append(i)
+    
+# rez.sort()
+# sr_znach = sum(rez) / len(rez)
+# print(len(rez))
