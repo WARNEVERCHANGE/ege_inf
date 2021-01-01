@@ -1,9 +1,9 @@
-def izi(n):
-    count = 0
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
-            count += 1
-    return count == 0
+# def izi(n):
+#     count = 0
+#     for i in range(2, int(n ** 0.5) + 1):
+#         if n % i == 0:
+#             count += 1
+#     return count == 0
 
 
 # st = 11275
@@ -96,3 +96,125 @@ def izi(n):
 # rez.sort()
 # sr_znach = sum(rez) / len(rez)
 # print(len(rez))
+
+
+
+# task 1
+# st = 25317
+# fn = 51237
+# for i in range(st, fn+1):
+#     count = 0
+#     if int(i ** 0.5) ** 2 != i:
+#         for j in range(2, int(i ** 0.5) + 1):
+#             if i % j == 0:
+#                 count += 1
+#                 dv = j
+#     if count == 3:
+#         print(i, dv)
+
+
+# task 2 : ans: 388 318449
+
+# def izi(x):
+#     count = 0
+#     for i in range(2, int(x ** 0.5) + 1):
+#         if x % i == 0:
+#             count += 1
+#     return count == 0
+
+
+# st = 318216
+# fn = 369453
+# d1 = 0
+# d2 = 0
+# count = 0
+# mn = 369454
+# for i in range(st, fn + 1):
+#     for j in range(2, int(i ** 0.5) + 1):
+#         if i % j == 0:
+#             d1 = d2 
+#             d2 = j
+#             if d1 != 0 and d2 != 0 and int(i / (d1 * d2)) == i / (d1 * d2) \
+#                  and d1 % 10 == d2 % 10 == int(i / (d1 * d2)) % 10 \
+#                      and izi(d1) and izi(d2) and izi(int(i / (d1 * d2))):
+#                 count += 1
+#                 if i < mn:
+#                     mn = i
+# print(count)
+# print(mn)
+
+
+# task 3: неполное решение
+# st = 326359
+# fn = 421986
+# diff = 0
+# mx_diff = 0
+# d = set()
+# flag = True
+
+# for i in range(st, fn + 1):
+#     temp = set()
+#     for j in range(2, int(i ** 0.5) + 1):
+#         if i % j == 0 and flag:
+#             diff = (i // j) - j
+#             flag = False
+#             temp.add(j); temp.add(i // j)
+#         else:
+#             if i % j == 0:
+#                 temp.add(j); temp.add(i // j)
+
+#     if diff > mx_diff:
+#         mx_diff = diff
+#         d = temp.copy()
+#     flag = True
+
+# print(diff)
+# for i in sorted(d):
+#     print(i, end = ' ')
+
+
+
+# task 4: 101889375
+# st = 2945
+# fn = 18294
+# res = 0
+# for i in range(st, fn + 1):
+#     count = 0
+#     for j in range(2, int(i ** 0.5) + 1):
+#         if int(j ** 0.5) ** 2 == j and i % j == 0:
+#             count += 1
+#     if count == 0:
+#         res += i
+
+# print(res) 
+
+# res = 0
+# for i in range(st, fn + 1):
+#     res += i
+
+# print(res)
+
+
+
+
+# task 5 ans:   1 2532007
+                # 4 2532083
+                # 7 2532113
+                # 10 2532157
+# def izi(n):
+#     count = 0
+#     for i in range(2, int(n ** 0.5) + 1):
+#         if n % i == 0:
+#             count += 1
+#     return count == 0
+# st = 2532000
+# fn = 2532160
+# num = 1
+# for i in range(st, fn + 1):
+#     if izi(i):
+#         if num % 3 == 1:
+#             print(num, i)
+#         num +=1 
+
+
+
