@@ -114,24 +114,90 @@
 
 # print(count)
 
+# f = open('text.txt')
+# n = int(f.readline())
+# a = [0] * 6
+# for i in range(6):
+#     a[i] = int(f.readline())
+
+# min_nch = 1001
+# min_m = 1002001
+
+# for i in range(6, n):
+#     if a[i % 6] % 2 == 1 and a[i % 6] < min_nch:
+#         min_nch = a[i % 6]
+#     x = int(f.readline())
+#     if x % 2 == 1 and x * min_nch < min_m and min_nch != 1001:
+#         min_m = x * min_nch
+#     a[i % 6] = x
+
+# if min_m != 1002001:
+#     print(min_m)
+# else:
+#     print(-1)
+
+
+# task 1 not effective
+# f = open('text.txt')
+
+# n = int(f.readline())
+
+# a = []
+
+# for i in range(4):
+#     a.append(int(f.readline()))
+# counter = 0
+# for i in range(4, n):
+#     x = int(f.readline())
+#     for j in range(i - 3):
+#         if (a[j] * x ) % 10 == 1:
+#             counter += 1
+#     a.append(x)
+
+# print(counter)
+
+# task 2
 f = open('text.txt')
+
 n = int(f.readline())
-a = [0] * 6
-for i in range(6):
+
+d3 = 10001
+nd3 = 10001
+
+
+
+#task 3 недорешенная задача
+# f = open('text.txt')
+
+# n = int(f.readline())
+
+# a = [0] * 7
+
+# for i in range(7):
+#     a[i] = int(f.readline())
+# count = 0
+# for i in range(7, n):
+#     x = int(f.readline())
+#     for j in range(7):
+#         if (x + a[j]) % 8 != 0:
+#             count += 1
+#     for j in range(6):
+#         a[j] = a[j+1]
+#     a[6] = x
+
+# print(count) 
+
+
+# task 4
+d = [0, 0, 0]
+f = open('text.txt')
+
+n = int(f.readline())
+
+a = [0] * 5
+
+for i in range(5):
     a[i] = int(f.readline())
 
-min_nch = 1001
-min_m = 1002001
-
-for i in range(6, n):
-    if a[i % 6] % 2 == 1 and a[i % 6] < min_nch:
-        min_nch = a[i % 6]
-    x = int(f.readline())
-    if x % 2 == 1 and x * min_nch < min_m and min_nch != 1001:
-        min_m = x * min_nch
-    a[i % 6] = x
-
-if min_m != 1002001:
-    print(min_m)
-else:
-    print(-1)
+for i in range(5, n):
+    if d[a[0] % 3] != 0 and d[a[0] % 3]
