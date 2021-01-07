@@ -200,4 +200,5 @@ for i in range(5):
     a[i] = int(f.readline())
 
 for i in range(5, n):
-    if d[a[0] % 3] != 0 and d[a[0] % 3]
+    if d[a[0] % 3] != 0 and d[a[0] % 3]:
+        pass
