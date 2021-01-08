@@ -142,7 +142,7 @@
 
 f = open('./27/27-7a.txt')
 
-k2 = -1; k13 = -1; nk = -1;
+k2 = -1; k13 = -1; nk1 = -1; nk2 = -1;
 
 n = int(f.readline())
 for i in range(n):
