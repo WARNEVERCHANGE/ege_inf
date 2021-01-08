@@ -142,17 +142,20 @@
 
 f = open('./27/27-7a.txt')
 
-k2 = -1; k13 = -1; nk1 = -1; nk2 = -1;
-
+k2 = 0; k13 = 0; nk = 0; mp = 0;
 n = int(f.readline())
 for i in range(n):
     x = int(f.readline())
     if x % 26 != 0:
-        if x % 2 == 0 and x > k2:
-            k2 = x
-        elif x % 13 == 0 and x > k13:
-            k13 = x
+        if x % 2 == 0:
+            mp = max(x*k2, x*nk)
+        elif x % 13 == 0:
+            mp = max(x*k13, x*nk)
         else:
-            if x > nk:
-                nk = x  
+            mp = max(x*nk, x*k2, x*k13)
+
+if mp == 0:
+    print('vsyo ploho')
+else:
+    print(mp)
 print(max(k2*nk, k13*nk))
