@@ -45,13 +45,28 @@
 
 
 
-f = open('26-10.txt')
+f = open('./26/26-10.txt')
 
-size, n = map(int, f.readline())
+size, n = map(int, f.readline().split())
 a = [0] * n
 
 
 for i in range(n):
     a[i] = int(f.readline())
+
+a.sort()
+s = 0
+last = 0
+for i in range(n):
+    if s + a[i] <= size:
+        s += a[i]
+        last = i
+print(last + 1)
+
+s -= a[last]
+for i in range(last + 1, n):
+    if s + a[i] <= size:
+        last = i
+print(a[last])
 
 
